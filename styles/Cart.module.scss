@@ -1,0 +1,61 @@
+@import "../styles/mixins";
+
+.CartWrapper {
+  width: 100px;
+  height: 100vh;
+  background-color: aliceblue;
+  padding: 20px 0;
+  gap: 10px;
+  @include make-flex($just: space-between);
+
+  &__item {
+    height: 76px;
+    width: 76px;
+    position: relative;
+    @include make-flex();
+    border-radius: 6px;
+    &:hover {
+      background-color: #cfcfcf;
+    }
+    i {
+      position: absolute;
+      bottom: 5px;
+      right: 7px;
+      font-size: small;
+      color: #5e5e5e;
+    }
+    &__close {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      height: 15px;
+      cursor: pointer;
+
+    }
+  }
+
+  &__top {
+    @include make-flex($just: flex-start);
+  }
+  &__bottom {
+    @include make-flex();
+    gap: 10px;
+    a {
+      @include make-flex();
+      border: 1px solid black;
+      height: 30px;
+      width: 90%;
+      border-radius: 8px;
+      background-color: azure;
+      cursor: pointer;
+
+      &:hover,
+      &:active {
+        background-color: rgb(225, 243, 243);
+      }
+      &:active {
+        background-color: rgb(217, 235, 235);
+      }
+    }
+  }
+}
